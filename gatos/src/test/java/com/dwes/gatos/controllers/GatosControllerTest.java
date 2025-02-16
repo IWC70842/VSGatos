@@ -49,7 +49,7 @@ public class GatosControllerTest {
   private Gato gato;
 
   /**
-   * Configura un objeto Gato de prueba antes de realizar cada test
+   * Configura un objeto Gato de prueba antes de ejecutar cada test
    */
   @BeforeEach
   void preparacion() {
@@ -67,7 +67,7 @@ public class GatosControllerTest {
   }
 
   /**
-   * Caso correcto de eliminación
+   * Eliminar un gato existente con éxito
    */
   @Test
   void testDeleteGatoById() {
@@ -80,7 +80,7 @@ public class GatosControllerTest {
   }
 
   /**
-   * Fallo en la eliminación por intentar eliminar un gato que no existe.
+   * Intentar eliminar un gato que no existe en la base de datos.
    */
   @Test
   void testDeleteGatoByIdError() {
@@ -93,7 +93,7 @@ public class GatosControllerTest {
   }
 
   /**
-   * Prueba el caso en que se intenta eliminar un gato con ID nulo.
+   * Intentar eliminar un gato con un Id nulo.
    */
   @Test
   void testDeleteGatoByIdNulo() {
@@ -104,7 +104,7 @@ public class GatosControllerTest {
   }
 
   /**
-   * Guardar un gato con éxito
+   * Guardar un gato con éxito en la base de datos.
    */
   @Test
   void testGato() {
@@ -132,7 +132,7 @@ public class GatosControllerTest {
   }
 
   /**
-   * Obtener con éxito un gato por Id
+   * Obtener un gato por su Id con éxito.
    */
   @Test
   void testGetGatoById() {
@@ -176,7 +176,7 @@ public class GatosControllerTest {
   }
 
   /**
-   * Intentar obtener la lista de gatos cuando no hay ninguno guardado
+   * Intentar obtener la lista de gatos cuando la base de datos está vacía.
    */
   @Test
   void testGetGatosListaVacia() {
@@ -189,7 +189,7 @@ public class GatosControllerTest {
   }
 
   /**
-   * Actualizar un gato con éxito
+   * Actualizar un gato existente con éxito
    */
   @Test
   void testUpdateGatoById() {
