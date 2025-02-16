@@ -32,9 +32,10 @@ public class GatosController {
   GatosService gatosService;
 
   /**
-   * Método para obtener la lista completa de gatos
+   * Método para obtener la lista completa de gatos almacenada en la base de datos.
    * 
-   * @return List<Gato>
+   * @return List<Gato>. Devuelve una lista con todas las entidades Gato
+   *         almacenadas en la base de datos.
    */
   @GetMapping
   public List<Gato> getGatos() {
@@ -42,10 +43,11 @@ public class GatosController {
   }
 
   /**
-   * Método para obtener un gato en concreto pasando la id de dicho gato
+   * Método para obtener un gato en concreto pasando la id de dicho gato.
    * 
-   * @param id
-   * @return Optional<Gato>
+   * @param id Id del gato en la base de datos.
+   * @return Optional<Gato>. Si encuentra una coincidencia con la id de un gato en
+   *         la base de datos nos devuelve el objeto Gato con dicha id.
    */
   @GetMapping("/{id}")
   public Optional<Gato> getGatoById(@PathVariable("id") Long id) {
@@ -53,10 +55,11 @@ public class GatosController {
   }
 
   /**
-   * Método para añadir un gato a la base de datos
+   * Método para añadir un gato a la base de datos.
    * 
-   * @param gato
-   * @return Gato
+   * @param gato Debemos pasar los parametros del objeto Gato a almacenar.
+   * @return Gato. Nos devuelve el objeto Gato correctamente almacenado en la base
+   *         de datos
    */
   @PostMapping
   public Gato gato(@RequestBody Gato gato) {
@@ -64,10 +67,13 @@ public class GatosController {
   }
 
   /**
-   * Método para eliminar un gato de la base de datos pasando la id de dicho gato
+   * Método para eliminar un gato de la base de datos pasando la id de dicho gato.
    * 
-   * @param id
-   * @return String
+   * @param id Debemos facilitar la Id en la base de datos del gato que queremos
+   *           eleminar.
+   * @return String Nos devuelve un mensaje con la confirmación del borrado o el
+   *         error en caso de que no encuentre un gato con esa id en la base de
+   *         datos.
    */
   @DeleteMapping("/{id}")
   public String deleteGatoById(@PathVariable("id") Long id) {
@@ -82,11 +88,13 @@ public class GatosController {
 
   /**
    * Método para actualizar los datos de un gato pasando los datos a actualizar y
-   * la id del gato
+   * la id del gato.
    * 
-   * @param request
-   * @param id
-   * @return Gato
+   * @param request Debemos facilitar en el body de la request los datos del gato
+   *                a modificar.
+   * @param id      Debemos facilitar la id en la base de datos del gato que
+   *                queremos actualizar.
+   * @return Gato Nos devuelve el gato con los datos modificados.
    */
   @PutMapping("/{id}")
   public Gato updateGatoById(@RequestBody Gato request, @PathVariable("id") Long id) {
